@@ -20,12 +20,11 @@ Travel log where users can create logs with photos from countries/cities visited
 - **sign up** - As a user I want to sign up on the web page so that I can create my travel log.
 - **login** - As a user I want to be able to log in on the web page so that I can use my account.
 - **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account.
+- **profile** - As a user I want to be able to edit my profile and my travels.
+- **my travels result** - As a user I want to see the list of coutries/date filter by my preferences.
+- **my travels details** - As a user I want to see more details of the travels I made, and also be able to create, edit and delete them from my profile.
 - **favorite list** - As a user I want to see the list of my favorite travels and delete them.
 - **wishlist** - As a user I would like to have a list of the countries I would like to visit next.
-- **profile** - As a user I want to be able to edit my profile and my travels.
-- **result** - As a user I want to see the list of coutries/date filter by my preferences.
-- **my travels** - As a user I want to see more details of the travels I made, and also be able to create, edit and delete them from my profile.
-
 
 <br>
 
