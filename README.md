@@ -46,9 +46,9 @@ Travel log where users can create logs with photos from countries/cities visited
 | `GET`      | `/private/travels`                 | Renders `travel-list` view (country/date)                            |                                     
 | `GET`      | `/private/travels/search-travel`      | Renders `search-travel` view (by country - API /date)                            |                                                          
 | `GET`      | `/private/travels/create`        | Private route. Renders `travel-create` form view.             |                                                          |
-| `PUT`      | `/private/travels/create`             | Private route. Sends travel info to server and updates user travel in DB | (country, imageUrl, description, date) |
+| `PUT`      | `/private/travels/create`             | Private route. Sends travel info to server and updates user travel in DB | (country, [imageUrl], description, date) |
 | `GET`      | `/private/travels/:id/edit`        | Private route. Renders `travel-edit` form view.             |                                                          |
-| `PUT`      | `/private/travels/:id/edit`         | Private route. Sends travel info to server and updates travel in DB | (country, imageUrl, description, date) |
+| `PUT`      | `/private/travels/:id/edit`         | Private route. Sends travel info to server and updates travel in DB | (country, [imageUrl], description, date) |
 | `GET`      | `/private/travels/details/:id`     | Renders `travel-details` view for a particular travel. |                                                   
 | `DELETE`      | `/private/travels/:id/delete`       | Private route. Deletes the existing item from the current user.
 | `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                                          |
@@ -74,10 +74,10 @@ User model
       type: String,
       trim: true,
       required: [true, 'Please input username'],
-      travels: TravelId,
-      ImageUrl: {
-  type: String,
-  default: ""
+      travels: [TravelId],
+      imageUrl: {
+     type: String,
+     default: ""
 }
     },
     email: {
@@ -106,7 +106,7 @@ required: true
 },
 city: String,
 date: {
-type: Number,
+type: Date,
 required: true
 },
  description: String,
