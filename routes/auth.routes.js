@@ -19,11 +19,12 @@ router.get("/signup", isLoggedOut, (req, res) => {
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, password } = req.body;
+  
+  const { username, email, password } = req.body;
 
-  if (!username) {
+  if (!username || !password || !email) {
     return res.status(400).render("auth/signup", {
-      errorMessage: "Please provide your username.",
+      errorMessage: "All fields are required.",
     });
   }
 
@@ -51,7 +52,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth.signup", { errorMessage: "Username already taken." });
+        .render("auth/signup", { errorMessage: "Username already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -59,10 +60,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .genSalt(saltRounds)
       .then((salt) => bcrypt.hash(password, salt))
       .then((hashedPassword) => {
+       
         // Create a user and save it in the database
         return User.create({
           username,
-          password: hashedPassword,
+          email,
+          passwordHash: hashedPassword,
         });
       })
       .then((user) => {
