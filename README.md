@@ -6,7 +6,7 @@
 
 ## Description
 
-Travel log where users can add files with photos, cities and hotels to organize and keep track of all the travels made. 
+Travel log where users can create logs with photos from countries/cities visited, in order to organize and keep track of all the travels made. 
 
 
 
@@ -196,6 +196,6 @@ The url to your presentation slides
 [Slides Link]()
 
 ### Contributors
-Marina Palma - [`MarinaPalma`](https://github.com/MarinaPalma) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/marina-palma-6740a923a/)
+Marina Palma - [`https://github.com/MarinaPalma`](https://github.com/MarinaPalma) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/marina-palma-6740a923a/)
 
 Alexandre Alves - [`<github-username>`](https://github.com/aletrad) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/alexandre-alves-20258823a/)
