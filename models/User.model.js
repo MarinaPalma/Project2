@@ -10,7 +10,7 @@ const userSchema = new Schema({
   travels: [{type: Schema.Types.ObjectId, ref: "Travel"}],
   imageUrl: {
     type: String,
-    default: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fhu%2Fsearch%2Fimages%3Fk%3Ddefault%2Bprofile%2Bpicture&psig=AOvVaw3xK-BkapZQRY_3-yRm8GxQ&ust=1652543320992000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJiwu9_p3PcCFQAAAAAdAAAAABAD",
+    default: "https://s2.glbimg.com/24s5Yp9nxfU5ofQLsrIMOkG7cGg=/0x0:718x897/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/K/Y/t0iivsRlSvBtoASNaOAA/avatar.png",
   },
   email: {
     type: String,
