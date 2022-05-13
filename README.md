@@ -42,7 +42,7 @@ Travel log where users can create logs with photos from countries/cities visited
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
 | `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  username, email, password  }                                    |
 | `GET`      | `/private/profile`                 | Private route. Renders `profile` form view.             |                                                          |
-| `PUT`      | `/private/profile`                 | Private route. Sends profile info to server and updates user in DB. | { email, password, username, imageUrl } |
+| `PUT`      | `/private/profile`                 | Private route. Sends profile info to server and updates user in DB. | { email, password, username, imageUrl } 
 
 | `GET`      | `/private/travels`                 | Renders `travel-list` view (country/date)                            |                                     
 | `GET`      | `/private/travels/search-travel`      | Renders `search-travel` view (by country - API /date)                            |                                                          
