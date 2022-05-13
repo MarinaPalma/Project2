@@ -196,6 +196,6 @@ The url to your presentation slides
 [Slides Link]()
 
 ### Contributors
-Marina Palma - [`https://github.com/MarinaPalma`](https://github.com/MarinaPalma) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/marina-palma-6740a923a/)
+Marina Palma - [`https://github.com/MarinaPalma`](https://github.com/MarinaPalma) - [`https://www.linkedin.com/in/marina-palma-6740a923a/`](https://www.linkedin.com/in/marina-palma-6740a923a/)
 
-Alexandre Alves - [`<github-username>`](https://github.com/aletrad) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/alexandre-alves-20258823a/)
+Alexandre Alves - [`https://github.com/aletrad`](https://github.com/aletrad) - [`https://www.linkedin.com/in/alexandre-alves-20258823a/`](https://www.linkedin.com/in/alexandre-alves-20258823a/)
