@@ -42,24 +42,24 @@ Travel log where users can create logs with photos from countries/cities visited
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
 | `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  username, email, password  }                                    |
 | `GET`      | `/private/profile`                 | Private route. Renders `profile` form view.             |                                                          |
-| `PUT`      | `/private/profile`                 | Private route. Sends profile info to server and updates user in DB. | { email, password, username, imageUrl } 
-
+| `PUT`      | `/private/profile`                 | Private route. Sends profile info to server and updates user in DB. | { email, password, username, imageUrl } |
 | `GET`      | `/private/travels`                 | Renders `travel-list` view (country/date)                            |                                     
 | `GET`      | `/private/travels/search-travel`      | Renders `search-travel` view (by country - API /date)                            |                                                          
-
 | `GET`      | `/private/travels/create`        | Private route. Renders `travel-create` form view.             |                                                          |
 | `PUT`      | `/private/travels/create`             | Private route. Sends travel info to server and updates user travel in DB | (country, imageUrl, description, date) |
 | `GET`      | `/private/travels/:id/edit`        | Private route. Renders `travel-edit` form view.             |                                                          |
 | `PUT`      | `/private/travels/:id/edit`         | Private route. Sends travel info to server and updates travel in DB | (country, imageUrl, description, date) |
 | `GET`      | `/private/travels/details/:id`     | Renders `travel-details` view for a particular travel. |                                                   
-                                                
 | `DELETE`      | `/private/travels/:id/delete`       | Private route. Deletes the existing item from the current user.
 | `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                                          |
 | `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, travel, city, }     
 | `DELETE`   | `/private/favorites/:travelId`     | Private route. Deletes the existing favorite from the current user. |   
 | `GET`      | `/private/wishlist`                | Private route. Render the `wishlist` view.                   |                                                          |
-| `POST`     | `/private/wishlist /`              | Private route. Adds a new wishlist item for the current user. | { name, country, city, }          
-| `DELETE`   | `/private/wishlist/:countryId`     | Private route. Deletes the existing item from the current user. |                                                  
+| `POST`     | `/private/wishlist /`              | Private route. Adds a new wishlist item for the current user. | { name, country, city, }          |
+| `DELETE`   | `/private/wishlist/:countryId`     | Private route. Deletes the existing item from the current user. |                                                          |
+       |
+                                                      |
+
 
 
 
