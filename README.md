@@ -190,6 +190,6 @@ The url to your presentation slides
 [Slides Link]()
 
 ### Contributors
-Marina Palma - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+Marina Palma - [`MarinaPalma`](https://github.com/MarinaPalma) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/marina-palma-6740a923a/)
 
 Alexandre Alves - [`<github-username>`](https://github.com/aletrad) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/alexandre-alves-20258823a/)
