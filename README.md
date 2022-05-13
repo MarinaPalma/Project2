@@ -42,13 +42,13 @@ Travel log where users can add files with photos, cities and hotels to organize 
 | `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
 | `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                                      |
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  firstName, lastName, email, password  }                                    |
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  username, email, password  }                                    |
 | `GET`      | `/private/profile`                 | Private route. Renders `profile` form view.             |                                                          |
-| `PUT`      | `/private/profile`                 | Private route. Sends profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
+| `PUT`      | `/private/profile`                 | Private route. Sends profile info to server and updates user in DB. | { email, password, username, imageUrl } |
 | `GET`      | `/private/travels/create`        | Private route. Renders `travel-create` form view.             |                                                          |
-| `PUT`      | `/private/travels/create`             | Private route. Sends travel info to server and updates user travel in DB (country, photos, description) |
+| `PUT`      | `/private/travels/create`             | Private route. Sends travel info to server and updates user travel in DB (country, imageUrl, description, date) |
 | `GET`      | `/private/travels/:id/edit`        | Private route. Renders `travel-edit` form view.             |                                                          |
-| `PUT`      | `/private/travels/:id/edit`         | Private route. Sends travel info to server and updates travel in DB (country, photos, description) |
+| `PUT`      | `/private/travels/:id/edit`         | Private route. Sends travel info to server and updates travel in DB (country, imageUrl, description, date) |
 | `DELETE`      | `/private/travels/:id/delete`       | Private route. Deletes the existing item from the current user.
 | `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                                          |
 | `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, travel, city, }     
@@ -57,7 +57,7 @@ Travel log where users can add files with photos, cities and hotels to organize 
 | `POST`     | `/private/wishlist /`              | Private route. Adds a new wishlist item for the current user. | { name, country, city, }          |
 | `DELETE`   | `/private/wishlist/:countryId`     | Private route. Deletes the existing item from the current user. |                                                          |
 | `GET`      | `/private/travels`                 | Renders `travel-list` view (country/date)                            |                                                          |
-| `GET`      | `/private/travels/details/:id`     | Renders `travel-details` view for the particular restaurant. |                                                          |
+| `GET`      | `/private/travels/details/:id`     | Renders `travel-details` view for a particular travel. |                                                          |
                                                       |
 
 
@@ -71,22 +71,68 @@ Travel log where users can add files with photos, cities and hotels to organize 
 User model
 
 ```javascript
-{
-  username: String,
-  email: String,
-  password: String,
-  travels: [TravelId],
+
+ username: {
+      type: String,
+      trim: true,
+      required: [true, 'Please input username'],
+      travels: TravelId,
+      ImageUrl: {
+  type: String,
+  default: ""
 }
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      lowercase: true,
+      match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email'],
+    },
+    passwordHash: {
+      type: String,
+      required: [true, 'Please input a password'],
+    },
+  },
 
 ```
 
+Travel model
 
+```javascript
+
+country: {
+type: String,
+required: true
+},
+date: {
+type: Number,
+required: true
+},
+ description: String,
+ ImageUrl: {
+  type: String,
+  default: ""
+}
+}
+
+```
 
 Favorites model
 
 ```javascript
 {
-  placeId: String,
+  travelId: String,
+}
+
+```
+
+Wishlist model
+
+```javascript
+{
+  countryId: String,
 }
 
 ```
@@ -97,6 +143,7 @@ Favorites model
 
 ## API's
 
+https://restcountries.com/
 
 <br>
 
@@ -111,7 +158,7 @@ Favorites model
 
 ## Backlog
 
-[See the Trello board.](https://trello.com/b/Ni3giVKf/ironhackproject)
+[See the Trello board.](https://trello.com/b/SQTMZBkg/modelo)
 
 
 
@@ -127,9 +174,9 @@ Favorites model
 
 The url to your repository and to your deployed project
 
-[Repository Link]()
+[Repository Link](https://github.com/MarinaPalma/Project2)
 
-[Deploy Link]()
+[Deploy Link](https://marinaproject.herokuapp.com/)
 
 
 
@@ -141,9 +188,9 @@ The url to your repository and to your deployed project
 
 The url to your presentation slides
 
-[Slides Link](https://docs.google.com/presentation/d/1P5FIi0vHZBUcgUtmt1M4_lLCO5dwdJ4UOgtJa4ehGfk/edit?usp=sharing)
+[Slides Link]()
 
 ### Contributors
-FirstName LastName - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+Marina Palma - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
 
-FirstName LastName - [`<github-username>`](https://github.com/person2-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
+Alexandre Alves - [`<github-username>`](https://github.com/aletrad) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/alexandre-alves-20258823a/)
