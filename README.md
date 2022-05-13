@@ -56,9 +56,7 @@ Travel log where users can create logs with photos from countries/cities visited
 | `DELETE`   | `/private/favorites/:travelId`     | Private route. Deletes the existing favorite from the current user. |   
 | `GET`      | `/private/wishlist`                | Private route. Render the `wishlist` view.                   |                                                          |
 | `POST`     | `/private/wishlist /`              | Private route. Adds a new wishlist item for the current user. | { name, country, city, }          |
-| `DELETE`   | `/private/wishlist/:countryId`     | Private route. Deletes the existing item from the current user. |                                                          |
-       |
-                                                      |
+| `DELETE`   | `/private/wishlist/:countryId`     | Private route. Deletes the existing item from the current user. |                                         
 
 
 
