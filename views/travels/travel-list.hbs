@@ -1,5 +1,18 @@
 <h1>My travels</h1>
 
+
+<div id="search">
+
+
+  <form action="/travels-search" method="get">
+    <input type="text" name="country"/>
+    <button type="submit" class="button">Search travel by country</button>
+  </form>
+
+</div>
+
+
+
 {{#each travels}}
 
   <p>{{title}}</p>
@@ -9,11 +22,17 @@
   <p><img src="{{imageUrl}}" alt="" /></p>
 
   <a href="/travels/{{_id}}/edit">Edit</a>
+  <a href="/travels/details">View details</a>
 
   <p><form action="/travels/{{_id}}/delete" method="post">
       <button class="delete" type="submit">Delete</button>
     </form></p>
 
+
 {{/each}}
 
 <a href="/travels/create">Create</a>
+
+<a href="/profile">Profile </a>
+
+{{!-- <a href="/profile/{{user._id}}">Profile</a> --}}
