@@ -1,17 +1,23 @@
 <h1>Create</h1>
 
-<form action="/travels/create" method="post">
+<form action="/travels/create" method="post" enctype='multipart/form-data'>
 <label for="title">title</label>
 <input type="text" name="title" id="title"/>
 
 <label for="country">Country</label>
 <input type="text" name="country" id="country"/>
 
+<label for="city">City</label>
+<input type="text" name="city" id="city"/>
+
 <label for="date">Date</label>
 <input type="date" name="date" id="date"/>
 
 <label for="description">description</label>
 <input type="text" name="description" id="description"/>
+
+<label for='image'>Image</label>
+        <input type='file' name='travel-image' id='image' />
 
 
 <button type"submit">Create</button>

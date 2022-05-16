@@ -13,9 +13,10 @@ const travelSchema = new Schema(
       required: true,
     },
     description: String,
-    ImageUrl: {
+    imageUrl: {
       type: String,
-      default: "",
+      default:
+        "https://s2.glbimg.com/24s5Yp9nxfU5ofQLsrIMOkG7cGg=/0x0:718x897/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/K/Y/t0iivsRlSvBtoASNaOAA/avatar.png",
     },
   },
   {

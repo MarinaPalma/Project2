@@ -6,10 +6,14 @@
   <p>{{country}}</p>
   <p> {{date}}</p>
   <p>{{description}}</p>
+  <p><img src="{{imageUrl}}" alt="" /></p>
 
   <a href="/travels/{{_id}}/edit">Edit</a>
+
   <p><form action="/travels/{{_id}}/delete" method="post">
       <button class="delete" type="submit">Delete</button>
     </form></p>
 
 {{/each}}
+
+<a href="/travels/create">Create</a>
