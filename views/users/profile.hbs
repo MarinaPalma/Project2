@@ -3,9 +3,14 @@
 {{#if user}}
 
   <p>Welcome {{user.username}}</p>
+  <p> Email  {{user.email}}</p>
   <img src={{user.imageUrl}} alt='photo' />
 
 
   <a href='/profile'>Reload</a>
+
+
+ 
+  <a href='/profile/{{_id}}/edit'>Edit</a>
 
 {{/if}}
