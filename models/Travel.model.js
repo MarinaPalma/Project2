@@ -12,9 +12,7 @@ const travelSchema = new Schema(
       type: Date,
       required: true,
     },
-
     author: { type: Schema.Types.ObjectId, ref: 'User' },
-
     description: String,
     imageUrl: {
       type: String,

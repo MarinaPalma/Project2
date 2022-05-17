@@ -12,8 +12,10 @@ router.get("/travels", (req, res, next) => {
     .then((currentUser) => {
      
       res.render("travels/travel-list", {travels: currentUser.travels});
+      
     })
     .catch((err) => next(err));
+
 });
 
 router.get("/travels/create", (req, res, next) => {
@@ -22,27 +24,20 @@ router.get("/travels/create", (req, res, next) => {
 
 
 
-// router.get("/travels-search", (req, res, next) =>{
-//   const {country} = req.query;
-  
-//   User.findById(req.session.user._id)
-//   .populate("travels")
-//     .then((currentUser) => {
-      
-//      const filteredCountries = currentUser.travels.filter((travel)=>{
-//        travel.country.toLowerCase() == country.toLowerCase();
-//      })
-//      console.log(filteredCountries)
-      
+// axios.get("https://restcountries.com/v3.1/name/${name}")
+//     .then((country)=>{
+//       console.log(country.data[0].flags.png)
+//       res.render("travels/travel-list", {
+//        flag: country.data[0].flags.png
+//       })
 //     })
-//     .catch((err) => next(err));
-// });
+//     .catch((err) =>
+//     console.log( err)
+//   );
+
+
 
   
-
-
-
-
 
 router.get("/travels-search", (req, res, next) =>{
   const {country} = req.query;
@@ -93,22 +88,15 @@ router.post(
   }
 );
 
-// router.get("/travels/:id/details", (req, res, next) => {
-  
-//   res.render("travels/travel-details");
-// });
+router.get("/travels/:id/details", (req, res, next) => {
+ const { id } = req.params;
+  Travel.findById(id)
+    .then((travels) => {
+      res.render("travels/travel-details", travels);
+    })
+    .catch((err) => next(err));
 
-
-// router.get("/celebrities/:id", (req, res, next) => {
-//   const { id } = req.params;
-//   Celebrity.findById(id)
-//     .then((celebrities) => {
-//       res.render("celebrities/celebrity-details", celebrities);
-//     })
-//     .catch((err) => next(err));
-// });
-
-
+});
 
 
 
