@@ -46,10 +46,21 @@ router.post(
   (req, res, next) => {
     const { title, country, city, date, description } = req.body;
     const userId = req.session.user._id;
-    if (req.file) {
+
+    let flag;
+    axios
+      .get(`https://restcountries.com/v3.1/name/${country}`)
+
+      .then((country) => {
+        flag = country.data[0].flags.png;
+      })
+    .then(()=>{
+
+      if (req.file) {
       Travel.create({
         title,
         country,
+        countryFlag: flag,
         city,
         author: userId,
         date,
@@ -68,35 +79,55 @@ router.post(
         })
         .catch((err) => next(err));
     } else {
-      Travel.create({ title, country, city, date, description })
+      Travel.create({
+        title,
+        country,
+        city,
+        date,
+        countryFlag: flag,
+        description,
+      })
         .then(() => res.redirect("/travels"))
         .catch((err) => next(err));
-    }
+    }})
   }
+
 );
+
 
 router.get("/travels/:id/details", (req, res, next) => {
   const { id } = req.params;
-  let travel;
+  
   Travel.findById(id)
-    .then((foundedTravel) => {
-
-      return travel = foundedTravel;
+    .then((travel) => {
+      res.render("travels/travel-details", travel);
     })
-    .then(() => {
-      const countryName = travel.country.toLowerCase();
-
-      return axios.get(`https://restcountries.com/v3.1/name/${countryName}`);
-    })
-    .then((country) => {
-      
-      const flag = country.data[0].flags.png;
-      console.log(country.data[0].flags.png);
-      res.render("travels/travel-details", { travel, flag });
-    })
-
     .catch((err) => next(err));
 });
+
+
+
+
+// router.get("/travels/:id/details", (req, res, next) => {
+//   const { id } = req.params;
+//   let travel;
+//   Travel.findById(id)
+//     .then((foundedTravel) => {
+//       return (travel = foundedTravel);
+//     })
+//     .then(() => {
+//       const countryName = travel.country.toLowerCase();
+
+//       return axios.get(`https://restcountries.com/v3.1/name/${countryName}`);
+//     })
+//     .then((country) => {
+//       const flag = country.data[0].flags.png;
+//       console.log(country.data[0].flags.png);
+//       res.render("travels/travel-details", { travel, flag });
+//     })
+
+//     .catch((err) => next(err));
+// });
 
 router.get("/travels/:id/edit", (req, res, next) => {
   const { id } = req.params;

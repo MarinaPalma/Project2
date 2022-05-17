@@ -7,6 +7,9 @@ const travelSchema = new Schema(
       type: String,
       required: true,
     },
+    countryFlag: {
+      type: String
+    },
     city: String,
     date: {
       type: Date,
