@@ -46,12 +46,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
   */
 
   // Search the database for a user with the username submitted in the form
-  User.findOne({ username }).then((found) => {
+  User.findOne({ email }).then((found) => {
     // If the user is found, send the message username is taken
     if (found) {
       return res
         .status(400)
-        .render("auth/signup", { errorMessage: "Username already taken." });
+        .render("auth/signup", { errorMessage: "Email already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -69,7 +69,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/profile");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
