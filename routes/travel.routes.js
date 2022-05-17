@@ -41,6 +41,9 @@ router.get("/travels-search", (req, res, next) => {
 });
 
 
+
+
+
 //Add API country flag when creating a travel
 
 router.post(
