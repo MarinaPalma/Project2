@@ -1,14 +1,15 @@
 
 <h1>Travel details</h1>
 
-  <p>{{title}}</p>
-  <p>{{country}}</p>
-    <p>{{city}}</p>
-  <p> {{date}}</p>
-  <p>{{description}}</p>
-  <p><img src="{{imageUrl}}" alt="" /></p>
+  <p>{{travel.title}}</p>
+  <p>{{travel.country}}</p>
+  <img src="{{flag}}" alt="">
+    <p>{{travel.city}}</p>
+  <p> {{travel.date}}</p>
+  <p>{{travel.description}}</p>
+  <p><img src="{{travel.imageUrl}}" alt="" /></p>
 
-  <a href="/travels/{{_id}}/edit">Edit</a>
+  <a href="/travels/{{travel._id}}/edit">Edit</a>
   
 
 
