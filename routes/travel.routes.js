@@ -193,6 +193,15 @@ router.post(
   }
 );
 
+//Delete photos by pull method because is an array
+router.post("/travels/:id/photos/delete", (req, res, next) => {
+  const { id } = req.params;
+  const {image} = req.body;
+  Travel.findByIdAndUpdate(id, {$pull:{imageUrl: image}})
+    .then(() => res.redirect(`/travels/${id}/details`))
+    .catch((err) => next(err));
+});
+
 router.post("/travels/:id/delete", (req, res, next) => {
   const { id } = req.params;
   Travel.findByIdAndRemove(id)

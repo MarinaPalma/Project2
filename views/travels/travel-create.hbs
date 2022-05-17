@@ -2,22 +2,22 @@
 
 <form action="/travels/create" method="post" enctype='multipart/form-data'>
 <label for="title">title</label>
-<input type="text" name="title" id="title"/>
+<input type="text" name="title" id="title" required/>
 
 <label for="country">Country</label>
-<input type="text" name="country" id="country"/>
+<input type="text" name="country" id="country" required/>
 
 <label for="city">City</label>
 <input type="text" name="city" id="city"/>
 
 <label for="date">Date</label>
-<input type="date" name="date" id="date"/>
+<input type="date" name="date" id="date" />
 
 <label for="description">description</label>
 <input type="text" name="description" id="description"/>
 
 <label for='image'>Cover Image</label>
-        <input type='file' name='travel-image' id='image'/>
+        <input type='file' name='travel-image' id='image' required/>
 
 
 <button type"submit">Create</button>

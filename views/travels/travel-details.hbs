@@ -10,6 +10,12 @@
 
   {{#each imageUrl}}
   <p><img src="{{this}}" alt="" /></p>
+
+
+   <p><form action="/travels/{{../_id}}/photos/delete" method="post">
+   <input type="text" value="{{this}}" name="image" hidden>
+      <button class="delete" type="submit">Delete</button>
+    </form></p>
   
   {{/each}}
  

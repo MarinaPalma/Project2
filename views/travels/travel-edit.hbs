@@ -3,10 +3,10 @@
 <form action="/travels/{{_id}}/edit" method="post" enctype="multipart/form-data">
 
 <label for="title">title</label>
-<input type="text" name="title" id="title" value="{{title}}"/>
+<input type="text" name="title" id="title" value="{{title}}" required/>
 
 <label for="country">Country</label>
-<input type="text" name="country" id="country" value="{{country}}"/>
+<input type="text" name="country" id="country" value="{{country}}" required/>
 
 <label for="city">City</label>
 <input type="text" name="city" id="city" value="{{city}}"/>
@@ -18,7 +18,7 @@
 <input type="text" name="description" id="description" value="{{description}}"/>
 
 <label for='image'>Image</label>
-        <input type='file' name='travel-image' id='image' />
+        <input type='file' name='travel-image' id='image' required/>
 
 <button type"submit">Update</button>
 
