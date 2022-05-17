@@ -7,15 +7,23 @@
     <p>{{city}}</p>
   <p> {{date}}</p>
   <p>{{description}}</p>
-  <p><img src="{{imageUrl}}" alt="" /></p>
 
-  <a href="/travels/{{_id}}/edit">Edit</a>
+  {{#each imageUrl}}
+  <p><img src="{{this}}" alt="" /></p>
+  
+  {{/each}}
+ 
   
 
 
+<form action="/travels/{{_id}}/photos" method="post" enctype='multipart/form-data'>
 
+    <label for='image'>Add Images</label>
+        <input type='file' name='travel-image' id='image' multiple="true"/>
+        <input type="submit" value="upload">
+</form>
 
-
+ <a href="/travels/{{_id}}/edit">Edit</a>
 <a href="/travels">Back to all travels</a>
 
 

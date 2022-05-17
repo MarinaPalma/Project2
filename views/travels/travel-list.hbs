@@ -15,11 +15,14 @@
 
 {{#each travels}}
 
+{{!-- {{#each imageUrl}}
+<p>{{this0}}</p>
+{{/each}} --}}
   <p>{{title}}</p>
   <p>{{country}}</p>
   <p> {{date}}</p>
   <p>{{description}}</p>
-  <p><img src="{{imageUrl}}" alt="" /></p>
+  <p><img src="{{imageUrl.[0]}}" alt="" /></p>
   <a href="/travels/{{_id}}/edit">Edit</a>
   
 

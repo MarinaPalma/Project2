@@ -40,7 +40,31 @@ router.get("/travels-search", (req, res, next) => {
   });
 });
 
+router.post("/travels/:id/photos",  fileUploader.array("travel-image", 10),(req, res, next) =>{
+const newPhotos = [];
+let currentPhotos;
+const {id} = req.params;
 
+req.files.forEach((file)=>{
+  newPhotos.push(file.path);
+  
+})
+
+Travel.findById(id)
+.then((originalTravel)=>{
+  return currentPhotos = originalTravel.imageUrl
+})
+.then(()=>{
+  const allPhotos = [... currentPhotos, ...newPhotos]
+ return Travel.findByIdAndUpdate(id, {imageUrl: allPhotos}, {new: true})
+})
+
+.then((updatedTravel)=>{
+console.log(updatedTravel)
+res.redirect(`/travels/${id}/details`)
+})
+
+})
 
 
 
