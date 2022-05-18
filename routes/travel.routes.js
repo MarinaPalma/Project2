@@ -29,27 +29,38 @@ router.get("/travels/create", (req, res, next) => {
 //   );
 
 router.get("/travels-search", (req, res, next) => {
-  const { country } = req.query;
-  Travel.find({
-    author: req.session.user._id,
-    // year: year,
-    country: { $regex: country, $options: "i" },
-  }).then((foundedCountries) => {
-    console.log(foundedCountries);
-    res.render("travels/travel-list", { travels: foundedCountries });
-  });
+  const { country, year} = req.query;
+  console.log(req.query)
+
+  if(!country){
+    Travel.find({
+      author: req.session.user._id,
+      year: year
+    }).then((foundedCountries) => {
+      console.log(foundedCountries);
+      res.render("travels/travel-list", { travels: foundedCountries });
+    });
+  } else if(!year) {
+    Travel.find({
+      author: req.session.user._id,
+      country: { $regex: country, $options: "i" },
+    }).then((foundedCountries) => {
+      console.log(foundedCountries);
+      res.render("travels/travel-list", { travels: foundedCountries });
+    });
+  } else {
+    Travel.find({
+      author: req.session.user._id,
+      country: { $regex: country, $options: "i" },
+      year: year
+    }).then((foundedCountries) => {
+      console.log(foundedCountries);
+      res.render("travels/travel-list", { travels: foundedCountries });
+    });
+  }
 });
 
-router.get("/travels-search", (req, res, next) => {
-  const { year } = req.query;
-  Travel.find({
-    author: req.session.user._id,
-    year: year,
-  }).then((foundedCountries) => {
-    console.log(foundedCountries);
-    res.render("travels/travel-list", { travels: foundedCountries });
-  });
-});
+
 
 router.post(
   "/travels/:id/photos",

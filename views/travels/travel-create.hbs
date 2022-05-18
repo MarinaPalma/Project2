@@ -6,7 +6,7 @@
 
 <label for="country">Country</label>
 <select id="country" name="country" required>
-    <option>Choose a country</option>
+    <option value="">Choose a country</option>
     <option value="Afghanistan">Afghanistan</option>
     <option value="Aland Islands">Aland Islands</option>
     <option value="Albania">Albania</option>
@@ -265,24 +265,24 @@
 <input type="text" name="city" id="city"/>
 
 <label for="month">Month</label>
-<select name="month" id="month">
-        <option>Choose a month</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
+<select name="month" id="month" required>
+        <option value="">Choose a month</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
       </select>
 
 <label for="year">Year</label>
-<input type="number" name="year" id="year" min="1900" max="2099" step="1" value="2022" />
+<input type="number" name="year" id="year" min="1900" max="2099" step="1" required/>
 
 <label for="description">description</label>
 <input type="text" name="description" id="description"/>
