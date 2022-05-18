@@ -22,22 +22,25 @@
   </div>
   <div class="cards-row">
     {{#each travels}}
-      <div class="card border-0" style="width: 18rem;">
-        <img src="{{imageUrl.[0]}}"  class="card-img-top card-size" alt="" />
+      <div class="card border-0" style="width: 25rem;">
+        <img src="{{imageUrl.[0]}}"  class="card-img-top card-size" alt="photo" />
         <div class="card-body text-secondary bg-light">
+          <img src="{{countryFlag}}" alt="" class="flag"/>
           <h5 class="card-title text-center text-card">{{title}}</h5>
           {{!-- <p>{{country}}</p> --}}
-          <img src="{{countryFlag}}" alt="" class="flag"/>
+
           {{!-- <p>{{month}}</p> --}}
           {{!-- <p>{{year}}</p> --}}
-          <p class="card-title text-center text-card">{{description}}</p>
+          <p class="card-title text-center text-card  description-size">{{description}}</p>
           <div class="d-grid">
-            <a href="/travels/{{_id}}/edit"  class="btn btn-outline-secondary text-center">Edit</a>
-
-            <a href="/travels/{{_id}}/details" class="btn btn-outline-danger text-center mt-2">View details trip</a>
-            <form action="/travels/{{_id}}/delete" method="post">
-              <button class="delete" type="submit"  class="btn btn-outline-danger text-center">Delete</button>
+          <a href="/travels/{{_id}}/details" class="btn btn-outline-danger text-center">View album</a>
+          <a href="/travels/{{_id}}/edit"  class="btn btn-outline-secondary text-center mt-2">Edit</a>
+            
+            <form action="/travels/{{_id}}/delete" method="post" class="delete-button">
+              <button class="delete" type="submit">Delete</button>
             </form>
+
+            
           </div>
         </div>
       </div>

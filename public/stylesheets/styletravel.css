@@ -16,4 +16,30 @@
   .card-size {
     height: 18rem;
   }
+  .description-size{
+height: 5rem;
+  }
+
+  .delete{
+
+      background-color:rgb(249, 115, 115);
+      padding: 0.5rem;
+      border: none;
+      border-radius: 8px;
+      opacity: 0.6;
+  transition: 0.3s;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  width:20%;
+  }
+
+  .delete:hover {opacity: 1}
+
+  .delete-button{
+      display: flex;
+      justify-content:flex-end;
+      align-items:center;
+      margin-top:0.3rem;
+  }
  
