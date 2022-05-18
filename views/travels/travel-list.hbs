@@ -1,52 +1,54 @@
 <div>
-<h1>My travels</h1>
+  <h1>My travels</h1>
 
-<div id="search">
+  <div id="search">
 
-  
-  <form action="/travels-search" method="get">
-    <input type="text" name="country" placeholder="Country name"/>
+    <form action="/travels-search" method="get">
+      <input type="text" name="country" placeholder="Country name" />
 
-   <input
-      type="number"
-      name="year"
-      min="1900"
-      max="2099"
-      step="1"
-      placeholder="YYYY"
-      
-    /> 
+      <input
+        type="number"
+        name="year"
+        min="1900"
+        max="2099"
+        step="1"
+        placeholder="YYYY"
+      />
 
-    <button type="submit" class="button">Search travel</button> 
+      <button type="submit" class="button">Search travel</button>
 
-  </form>
+    </form>
 
-</div>
-<div>
-{{#each travels}}
+  </div>
+  <div class="cards-row">
+    {{#each travels}}
+      <div class="card border-0" style="width: 18rem;">
+        <img src="{{imageUrl.[0]}}"  class="card-img-top card-size" alt="" />
+        <div class="card-body text-secondary bg-light">
+          <h5 class="card-title text-center text-card">{{title}}</h5>
+          {{!-- <p>{{country}}</p> --}}
+          <img src="{{countryFlag}}" alt="" class="flag"/>
+          {{!-- <p>{{month}}</p> --}}
+          {{!-- <p>{{year}}</p> --}}
+          <p class="card-title text-center text-card">{{description}}</p>
+          <div class="d-grid">
+            <a href="/travels/{{_id}}/edit"  class="btn btn-outline-secondary text-center">Edit</a>
 
-  <p>{{title}}</p>
-  <p>{{country}}</p>
-  <img src="{{countryFlag}}" alt="" />
-  <p>{{month}}</p>
-  <p>{{year}}</p>
-  <p>{{description}}</p>
-  <p><img src="{{imageUrl.[0]}}" alt="" /></p>
-  <a href="/travels/{{_id}}/edit">Edit</a>
+            <a href="/travels/{{_id}}/details" class="btn btn-outline-danger text-center mt-2">View details trip</a>
+            <form action="/travels/{{_id}}/delete" method="post">
+              <button class="delete" type="submit"  class="btn btn-outline-danger text-center">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div>
+    <a href="/travels/create">Create</a>
 
-  <p><form action="/travels/{{_id}}/delete" method="post">
-      <button class="delete" type="submit">Delete</button>
-    </form></p>
+    <a href="/profile">Profile</a>
 
-  <a href="/travels/{{_id}}/details">View details trip</a>
-{{/each}}
-</div>
-<div>
-<a href="/travels/create">Create</a>
-
-<a href="/profile">Profile</a>
-
-<a href="/travels">Reload</a>
-</div>
+    <a href="/travels">Reload</a>
+  </div>
 
 </div>

@@ -1,0 +1,19 @@
+.cards-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .flag{
+      width: 10%;
+      height: 10%;
+
+  }
+  .card-size {
+    height: 18rem;
+  }
+ 
