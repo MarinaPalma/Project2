@@ -1,23 +1,24 @@
-
-<h1>Signup</h1>
-
+<div class="log">
 <form action="/signup" method="POST">
-   <label> Username
+   <label class="loglb"> Username
       <input type="text" name="username">
    </label>
-   <label> Email
+   <label class="loglb"> Email
       <input type="email" name="email">
    </label>
    <input type="file" name="imageURL" value="" hidden>
-   <label> Password
+   <label class="loglb"> Password
       <input type="password" name="password">
    </label>
 
-   <button type="submit">Create account</button>
+   <button class="logbtn" type="submit">Create account</button>
 </form>
+<div class="log2">
+<a href="/">Homepage</a>
+</div>
+</div>
 
 {{#if errorMessage}}
   <p>{{errorMessage}}</p> 
 {{/if}}
 
-<a href="/">Homepage</a>
