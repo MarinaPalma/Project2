@@ -1,39 +1,34 @@
 <h1>My travels</h1>
 
-
 <div id="search">
 
-
   <form action="/travels-search" method="get">
-    <input type="text" name="country"/>
+    <input type="text" name="country" />
     <button type="submit" class="button">Search travel by country</button>
   </form>
 
 </div>
 
-
-
 {{#each travels}}
-
 
   <p>{{title}}</p>
   <p>{{country}}</p>
-  <p> {{date}}</p>
+  <img src="{{countryFlag}}" alt="" />
+  <p>{{month}}</p>
+  <p>{{year}}</p>
   <p>{{description}}</p>
   <p><img src="{{imageUrl.[0]}}" alt="" /></p>
   <a href="/travels/{{_id}}/edit">Edit</a>
-  
 
   <p><form action="/travels/{{_id}}/delete" method="post">
       <button class="delete" type="submit">Delete</button>
     </form></p>
 
-<a href="/travels/{{_id}}/details">View details trip</a>
+  <a href="/travels/{{_id}}/details">View details trip</a>
 {{/each}}
 
 <a href="/travels/create">Create</a>
 
+{{! <a href="/profile/">Profile</a> }}
 
-{{!-- <a href="/profile/">Profile</a> --}}
-
-<a href="/profile/{{_id}}">Profile</a>
+<a href="/profile">Profile</a>

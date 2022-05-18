@@ -11,17 +11,18 @@ const travelSchema = new Schema(
       required: true,
     },
     countryFlag: {
-      type: String
+      type: String,
     },
     city: String,
-    date: {
-      type: Date,
-    },
-    author: { type: Schema.Types.ObjectId, ref: 'User' },
+    month: String,
+    year: Number,
+    author: { type: Schema.Types.ObjectId, ref: "User" },
     description: String,
-    imageUrl: [{
-      type: String,
-    }],
+    imageUrl: [
+      {
+        type: String,
+      },
+    ],
   },
   {
     timestamps: true,

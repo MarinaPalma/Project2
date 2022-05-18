@@ -29,8 +29,7 @@ router.get("/travels/create", (req, res, next) => {
 //   );
 
 router.get("/travels-search", (req, res, next) => {
-  const { country } = req.query;
-  console.log(country);
+  const { country, year } = req.query;
   Travel.find({
     author: req.session.user._id,
     country: { $regex: country, $options: "i" },
@@ -40,33 +39,37 @@ router.get("/travels-search", (req, res, next) => {
   });
 });
 
-router.post("/travels/:id/photos",  fileUploader.array("travel-image", 10),(req, res, next) =>{
-const newPhotos = [];
-let currentPhotos;
-const {id} = req.params;
+router.post(
+  "/travels/:id/photos",
+  fileUploader.array("travel-image", 10),
+  (req, res, next) => {
+    const newPhotos = [];
+    let currentPhotos;
+    const { id } = req.params;
 
-req.files.forEach((file)=>{
-  newPhotos.push(file.path);
-  
-})
+    req.files.forEach((file) => {
+      newPhotos.push(file.path);
+    });
 
-Travel.findById(id)
-.then((originalTravel)=>{
-  return currentPhotos = originalTravel.imageUrl
-})
-.then(()=>{
-  const allPhotos = [... currentPhotos, ...newPhotos]
- return Travel.findByIdAndUpdate(id, {imageUrl: allPhotos}, {new: true})
-})
+    Travel.findById(id)
+      .then((originalTravel) => {
+        return (currentPhotos = originalTravel.imageUrl);
+      })
+      .then(() => {
+        const allPhotos = [...currentPhotos, ...newPhotos];
+        return Travel.findByIdAndUpdate(
+          id,
+          { imageUrl: allPhotos },
+          { new: true }
+        );
+      })
 
-.then((updatedTravel)=>{
-console.log(updatedTravel)
-res.redirect(`/travels/${id}/details`)
-})
-
-})
-
-
+      .then((updatedTravel) => {
+        console.log(updatedTravel);
+        res.redirect(`/travels/${id}/details`);
+      });
+  }
+);
 
 //Add API country flag when creating a travel
 
@@ -74,7 +77,7 @@ router.post(
   "/travels/create",
   fileUploader.single("travel-image"),
   (req, res, next) => {
-    const { title, country, city, date, description } = req.body;
+    const { title, country, city, month, year, description } = req.body;
     const userId = req.session.user._id;
 
     let flag;
@@ -84,59 +87,56 @@ router.post(
       .then((country) => {
         flag = country.data[0].flags.png;
       })
-    .then(()=>{
-
-      if (req.file) {
-      Travel.create({
-        title,
-        country,
-        countryFlag: flag,
-        city,
-        author: userId,
-        date,
-        description,
-        imageUrl: req.file.path,
-      })
-        .then((createdTravel) => {
-          return User.findByIdAndUpdate(
-            userId,
-            { $push: { travels: createdTravel._id } },
-            { new: true }
-          ).then((updatedUser) => {
-            console.log(updatedUser);
-            res.redirect("/travels");
-          });
-        })
-        .catch((err) => next(err));
-    } else {
-      Travel.create({
-        title,
-        country,
-        city,
-        date,
-        countryFlag: flag,
-        description,
-      })
-        .then(() => res.redirect("/travels"))
-        .catch((err) => next(err));
-    }})
+      .then(() => {
+        if (req.file) {
+          Travel.create({
+            title,
+            country,
+            countryFlag: flag,
+            city,
+            author: userId,
+            month,
+            year,
+            description,
+            imageUrl: req.file.path,
+          })
+            .then((createdTravel) => {
+              return User.findByIdAndUpdate(
+                userId,
+                { $push: { travels: createdTravel._id } },
+                { new: true }
+              ).then((updatedUser) => {
+                console.log(updatedUser);
+                res.redirect("/travels");
+              });
+            })
+            .catch((err) => next(err));
+        } else {
+          Travel.create({
+            title,
+            country,
+            city,
+            month,
+            year,
+            countryFlag: flag,
+            description,
+          })
+            .then(() => res.redirect("/travels"))
+            .catch((err) => next(err));
+        }
+      });
   }
-
 );
-
 
 router.get("/travels/:id/details", (req, res, next) => {
   const { id } = req.params;
-  
+
   Travel.findById(id)
     .then((travel) => {
       res.render("travels/travel-details", travel);
     })
     .catch((err) => next(err));
 });
-
-
-
 
 // router.get("/travels/:id/details", (req, res, next) => {
 //   const { id } = req.params;
@@ -173,20 +173,28 @@ router.post(
   fileUploader.single("travel-image"),
   (req, res, next) => {
     const { id } = req.params;
-    const { title, country, city, date, description } = req.body;
+    const { title, country, city, month, year, description } = req.body;
     if (req.file) {
       Travel.findByIdAndUpdate(id, {
         title,
         country,
         city,
-        date,
+        month,
+        year,
         description,
         imageUrl: req.file.path,
       })
         .then(() => res.redirect("/travels"))
         .catch((err) => next(err));
     } else {
-      Travel.findByIdAndUpdate(id, { title, country, city, date, description })
+      Travel.findByIdAndUpdate(id, {
+        title,
+        country,
+        city,
+        month,
+        year,
+        description,
+      })
         .then(() => res.redirect("/travels"))
         .catch((err) => next(err));
     }
@@ -196,8 +204,8 @@ router.post(
 //Delete photos by pull method because is an array
 router.post("/travels/:id/photos/delete", (req, res, next) => {
   const { id } = req.params;
-  const {image} = req.body;
-  Travel.findByIdAndUpdate(id, {$pull:{imageUrl: image}})
+  const { image } = req.body;
+  Travel.findByIdAndUpdate(id, { $pull: { imageUrl: image } })
     .then(() => res.redirect(`/travels/${id}/details`))
     .catch((err) => next(err));
 });
