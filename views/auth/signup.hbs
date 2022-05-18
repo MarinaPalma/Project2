@@ -26,12 +26,13 @@
 				
 			</div>
 			<div class="card-body ">
-				<form>
+				<form action="/signup" method="POST">
+
 					<div class="input-group form-group">
 						<div class="input-group-prepend ">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text"  name="username" class="form-control" placeholder="username" required>
 						
 					</div>
 
@@ -39,20 +40,20 @@
 						<div class="input-group-prepend mt-4">
 							<span class="input-group-text"><i class="fas fa-envelope "></i></span>
 						</div>
-						<input type="email" class="form-control mt-4" placeholder="email">
+						<input type="email" name="email" class="form-control mt-4" placeholder="email" required>
 					</div>
 
 					<div class="input-group form-group">
 						<div class="input-group-prepend mt-4">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control mt-4" placeholder="password">
+						<input type="password" name="password" class="form-control mt-4" placeholder="password" minlength="8" required>
 					</div>
                
 					
 					<div class="form-group mt-3 center-btn">
-						<a href="/signup" class="btn float-right login_btn">Signup</a>
-            
+                  <button class="btn float-right login_btn" type="submit">Signup</button>
+						            
 					</div>
 				</form>
 			</div>

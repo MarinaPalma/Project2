@@ -4,7 +4,7 @@ const userSchema = new Schema({
   username: {
     type: String,
     trim: true,
-    require: true,
+    required: [true, "Please enter a username"]
 
   },
   travels: [{type: Schema.Types.ObjectId, ref: "Travel"}],
@@ -14,7 +14,7 @@ const userSchema = new Schema({
   },
   email: {
     type: String,
-    required: [true, "Please enter a username"],
+    required: [true, "Please enter an email"],
     // unique: true,
     trim: true,
     lowercase: true,
