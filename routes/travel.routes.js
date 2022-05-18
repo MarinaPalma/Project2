@@ -29,10 +29,22 @@ router.get("/travels/create", (req, res, next) => {
 //   );
 
 router.get("/travels-search", (req, res, next) => {
-  const { country, year } = req.query;
+  const { country } = req.query;
   Travel.find({
     author: req.session.user._id,
+    // year: year,
     country: { $regex: country, $options: "i" },
+  }).then((foundedCountries) => {
+    console.log(foundedCountries);
+    res.render("travels/travel-list", { travels: foundedCountries });
+  });
+});
+
+router.get("/travels-search", (req, res, next) => {
+  const { year } = req.query;
+  Travel.find({
+    author: req.session.user._id,
+    year: year,
   }).then((foundedCountries) => {
     console.log(foundedCountries);
     res.render("travels/travel-list", { travels: foundedCountries });
@@ -171,13 +183,20 @@ router.get("/travels/:id/edit", (req, res, next) => {
 router.post(
   "/travels/:id/edit",
   fileUploader.single("travel-image"),
-  (req, res, next) => {
+  async (req, res, next) => {
     const { id } = req.params;
     const { title, country, city, month, year, description } = req.body;
+
+    let response = await axios.get(
+      `https://restcountries.com/v3.1/name/${country}`
+    );
+    let flag = response.data[0].flags.png;
+
     if (req.file) {
       Travel.findByIdAndUpdate(id, {
         title,
         country,
+        countryFlag: flag,
         city,
         month,
         year,
@@ -187,12 +206,13 @@ router.post(
         .then(() => res.redirect("/travels"))
         .catch((err) => next(err));
     } else {
-      Travel.findByIdAndUpdate(id, {
+      return Travel.findByIdAndUpdate(id, {
         title,
         country,
         city,
         month,
         year,
+        countryFlag: flag,
         description,
       })
         .then(() => res.redirect("/travels"))

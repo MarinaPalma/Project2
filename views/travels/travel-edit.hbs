@@ -7,7 +7,7 @@
 
 <label for="country">Country</label>
 <select id="country" name="country" required>
-    <option>Choose a country</option>
+    <option selected value="{{country}}">{{country}}</option>
     <option value="Afghanistan">Afghanistan</option>
     <option value="Aland Islands">Aland Islands</option>
     <option value="Albania">Albania</option>
@@ -267,19 +267,19 @@
 
 <label for="month">Month</label>
 <select name="month" id="month">
-        <option value="{{month}}">Choose a month</option>
-        <option value="{{month}}">January</option>
-        <option value="{{month}}">February</option>
-        <option value="{{month}}">March</option>
-        <option value="{{month}}">April</option>
-        <option value="{{month}}">May</option>
-        <option value="{{month}}">June</option>
-        <option value="{{month}}">July</option>
-        <option value="{{month}}">August</option>
-        <option value="{{month}}">September</option>
-        <option value="{{month}}">October</option>
-        <option value="{{month}}">November</option>
-        <option value="{{month}}">December</option>
+        <option selected value="{{month}}">{{month}}</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
       </select>
 
 <label for="year">Year</label>
@@ -289,7 +289,7 @@
 <input type="text" name="description" id="description" value="{{description}}"/>
 
 <label for="image" class="btn btn-primary btn-block btn-outlined">Upload a photo</label>
-<input type='file' name='travel-image' id='image' style="display: none;" required/>
+<input type='file' name='travel-image' id='image' style="display: none;"/>
 
 {{!-- <label for='image'>Image</label>
         <input type='file' name='travel-image' id='image' required/> --}}

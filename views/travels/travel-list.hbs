@@ -2,9 +2,20 @@
 
 <div id="search">
 
+  
   <form action="/travels-search" method="get">
     <input type="text" name="country" />
     <button type="submit" class="button">Search travel by country</button>
+   {{!-- <input
+      type="number"
+      name="year"
+      min="1900"
+      max="2099"
+      step="1"
+      
+    />
+    <button type="submit" class="button">Search travel by year</button> --}}
+
   </form>
 
 </div>
@@ -29,6 +40,6 @@
 
 <a href="/travels/create">Create</a>
 
-{{! <a href="/profile/">Profile</a> }}
-
 <a href="/profile">Profile</a>
+
+<a href="/travels">Reload</a>
