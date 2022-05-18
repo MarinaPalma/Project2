@@ -1,4 +1,4 @@
-body {
+/* body {
   height: 100vh;
   width: 100vw;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -6,6 +6,14 @@ body {
 
 a {
   color: #00b7ff;
+} */
+
+@import url("https://fonts.googleapis.com/css?family=Numans");
+
+
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 .home {
@@ -30,51 +38,7 @@ a {
   width: 20%;
 }
 
-.home2 > a {
-  appearance: none;
-  background-color: #FCFCFD;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  height: 48px;
-  
-  line-height: 2.6;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 26px;
-  padding-right: 26px;
-  position: relative;
-  
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 18px;
-}
-
-.home2 > a:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-}
-
-.home2 > a:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.home2 > a:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-}
-
-.log {
+.homelog {
   background-image: url("/images/travel2.jpg");
   height: 100%;
   width: 100%;
@@ -83,83 +47,72 @@ a {
   top: 0;
   left: 0;
   right: 0;
+  font-family: "Numans", sans-serif;
+}
+
+.container {
+  height: 100%;
+  align-content: center;
+}
+
+.card {
+  height: 370px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-header h3 {
+  color: white;
+}
+
+
+.input-group-prepend span {
+  width: 45px;
+  background-color: #ffc312;
+  color: black;
+  border: 0 !important;
+  height: 40px;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+  color: white;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.login_btn {
+  color: black;
+  background-color: #ffc312;
+  width: 100px;
+  
+}
+
+.login_btn:hover {
+  color: black;
+  background-color: white;
+}
+
+.links {
+  color: white;
+}
+
+.links a {
+  margin-left: 4px;
+}
+
+.center-btn {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-
-.log2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  
-}
-
-.log2 > a {
-  appearance: none;
-  background-color: #FCFCFD;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  height: 48px;
-  
-  line-height: 2.6;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 26px;
-  padding-right: 26px;
-  position: relative;
-  
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 18px;
-}
-
-.log2 > a:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-}
-
-.log2 > a:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.log2 > a:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-}
-
-.logbtn {
-  width: 90px;
-  height: 40px;
-  border: none;
-  outline: none;
-  background: #2f2f2f;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 40px;
-  text-align: center;
-  box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.loglb {
-   
-  font-size: 1.1rem;
-
-  
-}
-
