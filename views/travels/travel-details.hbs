@@ -1,5 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light custumnav">
+ <div class="container-fluid">
+  <a class="navbar-brand" > <img src="/images/logo.png" width="105" height="45" class="d-inline-block align-top" alt=""></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<h1>Travel details</h1>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="/travels">My travels </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/travels/create">Create new album</a>
+      </li>
+     
+
+    </ul>
+    <form action="/travels-search" method="get" class="d-flex">
+      <input class="form-control me-2" type="text" name="country" placeholder="Country name" aria-label="Search">
+      <input class="form-control me-2" type="number" name="year" min="1900" max="2099" step="1" placeholder="YYYY" />
+      <button class="btn create_btn3" type="submit">Search</button>
+    </form>
+  </div>
+  </div>
+</nav>
+
+<div class="mainAlbum">
+<h1 class="titleText"> <span> My album</span></h1>
+</div>
+
+<div class="album-btn">
+<form action="/travels/{{_id}}/photos" method="post" enctype='multipart/form-data'>
+
+    <label for='image' class="btn create_btn4">Add more photos</label>
+        <input type='file' style="display: none;" name='travel-image' id='image' multiple="true"/>
+        <input type="submit" class="btn create_btn5" value="Upload">
+</form>
+</div>
 
   {{!-- <p>{{title}}</p>
   <p>{{country}}</p>
@@ -36,19 +76,3 @@
 
 
 
-
-<form action="/travels/{{_id}}/photos" method="post" enctype='multipart/form-data'>
-
-    <label for='image'>Add Images</label>
-        <input type='file' name='travel-image' id='image' multiple="true"/>
-        <input type="submit" value="upload">
-</form>
-
- <a href="/travels/{{_id}}/edit">Edit</a>
-<a href="/travels">Back to all travels</a>
-
-
-<a href="/profile">Profile</a> 
- <p><form action="/travels/{{_id}}/delete" method="post">
-      <button class="delete" type="submit">Delete</button>
-    </form></p>

@@ -42,7 +42,7 @@ h1.title {
     display: block;
     color: black;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: .9rem;
     margin-bottom: 10px;
 }
 
@@ -70,8 +70,6 @@ h1.title {
     background-color: #ffc312;
     width: 130px;
     height: 50px;
-    display: flex;
-    
 }
   
 .create_btn:hover {
@@ -79,13 +77,15 @@ h1.title {
     background-color: white;
   }
 
-  .edit_btn {
+  .create_btn1 {
     color: black;
     background-color: #ffc312;
-    width: 100px;
+    width: 130px;
+    height: 50px;
+   
 }
   
-.edit_btn:hover {
+.create_btn1:hover {
     color: black;
     background-color: white;
   }
@@ -120,4 +120,16 @@ h1.title {
    
     font-size: .9rem;
     text-indent: 15px;
+  }
+
+  .create_btn3 {
+    color: black;
+    background-color: #ffc312;
+    width: 100px;
+    height: 40px;
+}
+  
+.create_btn3:hover {
+    color: black;
+    background-color: white;
   }

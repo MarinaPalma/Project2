@@ -1,3 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light custumnav">
+ <div class="container-fluid">
+  <a class="navbar-brand" > <img src="/images/logo.png" width="105" height="45" class="d-inline-block align-top" alt=""></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="/travels">My travels </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/travels/create">Create new album</a>
+      </li>
+
+    </ul>
+    <form action="/travels-search" method="get" class="d-flex">
+      <input class="form-control me-2" type="text" name="country" placeholder="Country name" aria-label="Search">
+      <input class="form-control me-2" type="number" name="year" min="1900" max="2099" step="1" placeholder="YYYY" />
+      <button class="btn create_btn3" type="submit">Search</button>
+    </form>
+  </div>
+  </div>
+</nav>
+
+
+
+
 <h2>Your profile</h2>
 
 {{#if user}}

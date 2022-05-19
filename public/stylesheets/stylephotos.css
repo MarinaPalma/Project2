@@ -20,3 +20,35 @@
     display: flex;
     flex-direction: column;
 }
+
+.album-btn {
+    display: flex;
+    justify-content: end;
+    margin-right: 1rem;
+}
+
+.create_btn4 {
+    color: black;
+    background-color: #ffc312;
+    width: 130px;
+    height: 60px;
+   
+}
+  
+.create_btn4:hover {
+    color: black;
+    background-color: white;
+  }
+
+  .create_btn5 {
+    color: black;
+    background-color: #ffc312;
+    width: 130px;
+    height: 60px;
+   
+}
+  
+.create_btn5:hover {
+    color: black;
+    background-color: white;
+  }
