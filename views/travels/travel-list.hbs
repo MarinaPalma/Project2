@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light custumnav">
  <div class="container-fluid">
-  <a class="navbar-brand" href="#"> <img src="/images/logo.png" width="150" height="50" class="d-inline-block align-top" alt=""></a>
+  <a class="navbar-brand"> <img src="/images/logo.png" width="105" height="45" class="d-inline-block align-top" alt=""></a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,7 +31,7 @@
 
 <div class="mainAlbum">
   
-  <h1 class="titleText"> <span> My travels</span></h1>
+  <h1 class="titleText"> <span> <b>My travels</b></span></h1>
   
 
   {{!-- <div id="search">
@@ -55,29 +55,22 @@
           <h5 class="card-title text-center text-card">{{title}}</h5>
           <p>{{country}}  | {{month}}, {{year}} </p>
 
-          {{!-- <p>{{month}}</p>
-          <p>{{year}}</p> --}}
           <p class="card-title text-center text-card  description-size">{{description}}</p>
           <div class="d-grid">
           <a href="/travels/{{_id}}/details" class="btn btn-outline-danger text-center">View album</a>
-          <a href="/travels/{{_id}}/edit"  class="btn btn-outline-secondary text-center mt-2">Edit</a>
-            
-            <form action="/travels/{{_id}}/delete" method="post" class="delete-button">
-              <button class="delete-btn" type="submit">Delete</button>
+
+          <div class="buttons-fix">
+          <a href="/travels/{{_id}}/edit" ><button class="btn btn-outline-secondary text-center mt-2 btn-edit">Edit</button></a>
+            <form action="/travels/{{_id}}/delete" method="post">
+              <button class="btn btn-outline-secondary text-center mt-2 btn-edit" type="submit">Delete</button>
             </form>
+            </div>
 
             
           </div>
         </div>
       </div>
     {{/each}}
-  </div>
-  <div>
-    <a href="/travels/create">Create</a>
-
-    <a href="/profile">Profile</a>
-
-
   </div>
 
 </div>

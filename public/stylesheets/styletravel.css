@@ -20,29 +20,7 @@
 height: 5rem;
   }
 
-  .delete-btn{
 
-      background-color:rgb(249, 115, 115);
-      padding: 0.5rem;
-      border: none;
-      border-radius: 8px;
-      opacity: 0.6;
-  transition: 0.3s;
-  text-align: center;
-  display: inline-block;
-  cursor: pointer;
-  width:20%;
-  }
-
-  .delete-btn:hover {opacity: 1}
-
-  .delete-button{
-      display: flex;
-      justify-content:flex-end;
-      align-items:center;
-      margin-top:0.3rem;
-  }
- 
 
   .custumnav{
       background-color: #083d77;
@@ -55,7 +33,9 @@ height: 5rem;
  text-align: center;
  width:500px;
  border-bottom: 5px solid #ffc312;
- padding-bottom: 1rem;
+ padding-bottom: 2rem;
+ padding-top: 1.4rem;
+ font-size: 50px;
   }
 
 
@@ -64,3 +44,13 @@ height: 5rem;
       align-items: center;
       flex-direction: column;
   }
+
+
+.buttons-fix{
+    display: flex;
+    justify-content: space-around;
+
+}
+.btn-edit{
+    width:11rem;
+}

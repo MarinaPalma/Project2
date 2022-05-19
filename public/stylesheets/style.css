@@ -8,12 +8,13 @@ a {
   color: #00b7ff;
 } */
 
-@import url("https://fonts.googleapis.com/css?family=Numans");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
 
 
 body {
   height: 100vh;
-
+  font-family: 'Montserrat', sans-serif;
+background-color:#f4f4f4 ;
 }
 
 
