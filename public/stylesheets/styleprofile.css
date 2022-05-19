@@ -2,13 +2,17 @@
         height: 100vh;
        }
 
+       .img-fluid {
+        opacity: 0.7;
+    }
+
        .card-profile{
 
         width: 380px;
         border: none;
         border-radius: 15px;
         padding: 8px;
-        background-color: #fff;
+        border: solid;
         position: relative;
         height: 370px;
        }
@@ -34,9 +38,9 @@
        .profile img{
 
         
-        height: 80px;
-        width: 80px;
-        margin-top:2px;
+        height: 130px;
+        width: 130px;
+        margin: -50px;
 
        
        }
@@ -48,9 +52,9 @@
         left: 38%;
         height: 90px;
         width: 90px;
-        border:3px solid #fff;
+        
 
-        border-radius: 50%;
+        
 
        }
 
@@ -73,3 +77,10 @@
            font-size: 1.1rem;
            font-weight: 500;
        }
+
+       .rounded-circle {
+        border-radius: 10%;
+       }
+       
+      
+     
