@@ -20,7 +20,7 @@
 
 <div class="homelog">
 	<div class="d-flex justify-content-center h-100">
-		<div class="card">
+		<div class="card-home">
 			<div class="card-header">
 				<h3>Signup</h3>
 				
@@ -42,7 +42,11 @@
 						</div>
 						<input type="email" name="email" class="form-control mt-4" placeholder="email" required>
 					</div>
+                  {{#if errorMessage}}
 
+                     <p>{{errorMessage}}</p>
+              
+                  {{/if}}
 					<div class="input-group form-group">
 						<div class="input-group-prepend mt-4">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -67,7 +71,8 @@
 	</div>
 </div>
 
-{{#if errorMessage}}
-  <p>{{errorMessage}}</p> 
-{{/if}}
 
+{{!-- 
+                  {{#if errorMessage}}
+                   <p>{{errorMessage}}</p> 
+                  {{/if}} --}}
