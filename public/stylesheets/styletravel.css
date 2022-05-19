@@ -34,7 +34,7 @@ height: 5rem;
   width:20%;
   }
 
-  .delete:hover {opacity: 1}
+  .delete-btn:hover {opacity: 1}
 
   .delete-button{
       display: flex;
