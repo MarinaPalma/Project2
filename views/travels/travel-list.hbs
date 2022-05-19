@@ -16,7 +16,7 @@
       />
 
       <button type="submit" class="button">Search travel</button>
-
+    <a href="/travels">Reload</a>
     </form>
 
   </div>
@@ -27,17 +27,17 @@
         <div class="card-body text-secondary bg-light">
           <img src="{{countryFlag}}" alt="" class="flag"/>
           <h5 class="card-title text-center text-card">{{title}}</h5>
-          {{!-- <p>{{country}}</p> --}}
+          <p>{{country}}  | {{month}}, {{year}} </p>
 
-          {{!-- <p>{{month}}</p> --}}
-          {{!-- <p>{{year}}</p> --}}
+          {{!-- <p>{{month}}</p>
+          <p>{{year}}</p> --}}
           <p class="card-title text-center text-card  description-size">{{description}}</p>
           <div class="d-grid">
           <a href="/travels/{{_id}}/details" class="btn btn-outline-danger text-center">View album</a>
           <a href="/travels/{{_id}}/edit"  class="btn btn-outline-secondary text-center mt-2">Edit</a>
             
             <form action="/travels/{{_id}}/delete" method="post" class="delete-button">
-              <button class="delete" type="submit">Delete</button>
+              <button class="delete-btn" type="submit">Delete</button>
             </form>
 
             
@@ -51,7 +51,7 @@
 
     <a href="/profile">Profile</a>
 
-    <a href="/travels">Reload</a>
+
   </div>
 
 </div>

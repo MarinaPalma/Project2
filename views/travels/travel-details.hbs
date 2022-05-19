@@ -1,26 +1,40 @@
 
 <h1>Travel details</h1>
 
-  <p>{{title}}</p>
+  {{!-- <p>{{title}}</p>
   <p>{{country}}</p>
   <img src="{{countryFlag}}" alt="">
     <p>{{city}}</p>
   <p>{{month}}</p>
-  <p>{{year}}</p>
-  <p>{{description}}</p>
+  <p>{{year}}</p> --}}
+  {{!-- <p>{{description}}</p> --}}
 
-  {{#each imageUrl}}
-  <p><img src="{{this}}" alt="" /></p>
+  
 
 
-   <p><form action="/travels/{{../_id}}/photos/delete" method="post">
+
+<div class="main-album">
+{{#each imageUrl}}
+
+
+<div class="card-deck">
+  <div class="card-photo-album img-thumbnail rounded" style="max-width: 40rem;" >
+    <img src="{{this}}" class="card-img-top" alt="...">
+
+   <form action="/travels/{{../_id}}/photos/delete" method="post" class="delete-button">
    <input type="text" value="{{this}}" name="image" hidden>
-      <button class="delete" type="submit">Delete</button>
-    </form></p>
+      <button class="delete-btn" type="submit">Delete</button>
+    </form>
+  </div>
+</div>
+
+
+
   
   {{/each}}
- 
-  
+</div>
+
+
 
 
 <form action="/travels/{{_id}}/photos" method="post" enctype='multipart/form-data'>

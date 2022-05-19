@@ -1,0 +1,22 @@
+.card-deck{
+    display: flex;
+    flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+    width: 40rem;
+}
+
+.main-album{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+/* 
+.album-form{
+    display: flex;
+    flex-direction: column;
+} */
+.form-and-btn{
+    display: flex;
+    flex-direction: column;
+}
