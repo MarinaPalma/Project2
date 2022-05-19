@@ -1,7 +1,7 @@
 .container-create {
     width: 100vw;
     height: 100vh;
-    font-family: 'Open sans';
+
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
