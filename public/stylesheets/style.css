@@ -52,9 +52,17 @@ background-color:#f4f4f4 ;
   font-family: "Numans", sans-serif;
 }
 
+.phrase-logo {
+  font-size: 60px;
+}
+
 .container {
   height: 100%;
   align-content: center;
+}
+
+.avatar-size {
+  width: 100px;
 }
 
 .card-home {
