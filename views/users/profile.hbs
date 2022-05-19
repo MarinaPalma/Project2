@@ -2,7 +2,64 @@
 
 {{#if user}}
 
-  <p>Welcome {{user.username}}</p>
+
+<div class="container d-flex justify-content-center align-items-center">
+             
+             <div class="card-profile">
+
+              <div class="upper">
+
+                <img src="/images/travel2.jpg" class="img-fluid">
+                
+              </div>
+
+              <div class="user text-center">
+
+                <div class="profile">
+
+                  <img src="{{user.imageUrl}}" class="rounded-circle" width="80">
+                  
+                </div>
+
+              </div>
+
+
+              <div class="mt-5 text-center">
+
+                <h4 class="mb-0 text-white">Welcome {{user.username}}</h4>
+                <p class="mb-2 text-white mail">Email: {{user.email}}</p>
+
+                <a href='/profile/{{user._id}}/edit' class="btn  btn-sm follow">Edit</a>
+
+                <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+
+                  <div class="stats">
+                    <a href="/travels" class="btn  btn-sm follow">My travels</a>
+
+                  </div>
+
+
+                  <div class="stats">
+                    <a href="/travels/create" class="btn  btn-sm follow">Add travel</a>
+
+                  </div>
+
+
+                  <div class="stats">
+                    <a href="/logout" class="btn  btn-sm follow">Logout</a>
+
+                  </div>
+                  
+                </div>
+                
+              </div>
+               
+             </div>
+
+           </div>
+
+
+  {{!-- <p>Welcome {{user.username}}</p>
   <p> Email  {{user.email}}</p>
   <img src={{user.imageUrl}} alt='photo' />
 
@@ -14,6 +71,6 @@
   <a href='/profile/{{user._id}}/edit'>Edit</a>
   <a href="/travels">My travels</a>
 <a href="/travels/create">Add travel</a>
-<a href="/logout">Logout</a>
+<a href="/logout">Logout</a> --}}
 
 {{/if}}
