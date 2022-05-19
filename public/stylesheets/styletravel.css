@@ -43,3 +43,24 @@ height: 5rem;
       margin-top:0.3rem;
   }
  
+
+  .custumnav{
+      background-color: #083d77;
+  }
+  .custumnav a{
+      color:white;
+  }
+
+  .titleText{
+ text-align: center;
+ width:500px;
+ border-bottom: 5px solid #ffc312;
+ padding-bottom: 1rem;
+  }
+
+
+  .mainAlbum{
+      display:flex ;
+      align-items: center;
+      flex-direction: column;
+  }

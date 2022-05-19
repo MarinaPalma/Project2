@@ -13,8 +13,9 @@ a {
 
 body {
   height: 100vh;
-  width: 100vw;
+
 }
+
 
 .home {
   background-image: url("/images/travel2.jpg");
