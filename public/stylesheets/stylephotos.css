@@ -24,13 +24,13 @@
 .album-btn {
     display: flex;
     justify-content: end;
-    margin-right: 1rem;
+    margin-right: 4rem;
 }
 
 .create_btn4 {
     color: black;
     background-color: #ffc312;
-    width: 130px;
+    width: 150px;
     height: 60px;
    
 }
@@ -42,8 +42,8 @@
 
   .create_btn5 {
     color: black;
-    background-color: #ffc312;
-    width: 130px;
+    border: 2px solid #ffc312;
+    width: 80px;
     height: 60px;
    
 }
@@ -52,3 +52,8 @@
     color: black;
     background-color: white;
   }
+
+.delete-button{
+    display: flex;
+justify-content: flex-end;
+}

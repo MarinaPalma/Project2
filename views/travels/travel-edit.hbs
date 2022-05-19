@@ -27,11 +27,13 @@
   </div>
 </nav>
 
+<div class="mainAlbum">
+<h1 class="titleText"> <span><b>Edit travel</b></span></h1>
+</div>
 
 <div class="container-create">
 <div class="wrapper-form">
      <div class="form1">
-         <h1 class="title">Edit travel</h1>
 
          <form action="/travels/{{_id}}/edit" method="post" enctype="multipart/form-data" class="myform">
 
@@ -337,10 +339,10 @@
 <input type="text" name="description" id="description" value="{{description}}"/>
              </div>
 
-            <label for="image" class="btn create_btn">Upload a Photo</label>
+            <label for="image" class="btn create_btn" style="width: 150px">Upload a Photo</label>
 <input type='file' name='travel-image' id='image' style="display: none;"/>
 
-<button class="btn create_btn1" type"submit">Edit</button>
+<button class="btn create_btn1" type"submit"><b>Edit</b></button>
 
 
 

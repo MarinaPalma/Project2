@@ -1,12 +1,11 @@
 .container-create {
-    width: 100vw;
-    height: 100vh;
 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
     
 }
 
@@ -35,7 +34,7 @@ h1.title {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 25px;
-    border: solid;
+
 }
 
 .myform label {
@@ -70,6 +69,8 @@ h1.title {
     background-color: #ffc312;
     width: 130px;
     height: 50px;
+    text-align: center;
+    padding-top:15px;
 }
   
 .create_btn:hover {
