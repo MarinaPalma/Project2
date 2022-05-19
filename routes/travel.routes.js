@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Travel = require("../models/travel.model");
+const Travel = require("../models/Travel.model");
 const fileUploader = require("../config/cloudinary.config");
 const User = require("../models/User.model");
 const axios = require("axios");
